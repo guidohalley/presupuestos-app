@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presupuesto de Servicios - twodesigners</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(
+          3200deg,
+          rgb(52, 11, 80) 10%,
+          rgb(195, 20, 50) 50%,
+          rgb(243, 243, 243) 100%
+        );
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto px-4 py-8">
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <div class="flex items-center mb-6">
+          <img src="TD LOGO.svg" alt="Logo de la Empresa" class="h-16 mr-4" />
+          <h1 class="text-2xl font-bold">
+            Presupuesto de Servicios 
+          </h1>
+        </div>
+        <p class="mb-4">
+          <strong>Nota:</strong> Este presupuesto no incluye gastos de hosting.
+        </p>
+        <p class="mb-4">
+          <strong>Cliente:</strong> Martina Salto Ayrault NEUTRO GYM.
+        </p>
+        <p class="mb-4">
+            <strong>Empresa:</strong> NEUTRO GYM.
+        </p>
+        <h2 class="text-xl font-semibold mb-2">Descripción del Proyecto</h2>
+        <p class="mb-4">
+          Sistema para gimnasio que permitirá a los profesores seleccionar
+          ejercicios y marcar la rutina diaria, con un contador de vueltas
+          visible en la TV. Desarrollado utilizando el stack MERN y sincronizado
+          en Vercel.
+        </p>
+
+        <div class="mb-4">
+          <h2 class="text-xl font-semibold mb-2">Componentes del Proyecto</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            <div class="bg-white shadow-md rounded-lg p-4">
+              <h3 class="text-m font-semibold mb-2">Frontend (React)</h3>
+              <ul class="list-disc pl-6">
+                <li>Diseño e implementación de la interfaz de usuario.</li>
+              </ul>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4">
+              <h3 class="text-m font-semibold mb-2">
+                Backend (Node.js, Express)
+              </h3>
+              <ul class="list-disc pl-6">
+                <li>Desarrollo de la lógica del servidor y las API.</li>
+              </ul>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4">
+              <h3 class="text-m font-semibold mb-2">Base de Datos (MongoDB)</h3>
+              <ul class="list-disc pl-6">
+                <li>Configuración y manejo de la base de datos.</li>
+              </ul>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4">
+              <h3 class="text-lg font-semibold mb-2">Despliegue (Vercel)</h3>
+              <ul class="list-disc pl-6">
+                <li>Sincronización y despliegue del proyecto en Vercel.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="text-xl font-semibold mb-2">Plan de Trabajo y Cronograma</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+          <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="flex items-center mb-2">
+              <i class="fas fa-calendar-alt h-6 w-6 text-gray-600 mr-2"></i>
+              <h3 class="text-lg font-semibold">Mes de Agosto</h3>
+            </div>
+            <p>
+              <strong>Actividades:</strong>
+              <ul class="list-disc pl-6">
+                <li>Relevamiento Técnico</li>
+                <li>Diseño del Sistema</li>
+                <li>Configuración de la Base de Datos</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Precio:</strong> $160 USD
+            </p>
+          </div>
+          <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="flex items-center mb-2">
+              <i class="fas fa-calendar-alt h-6 w-6 text-gray-600 mr-2"></i>
+              <h3 class="text-lg font-semibold">Mes de Septiembre</h3>
+            </div>
+            <p>
+              <strong>Actividades:</strong>
+              <ul class="list-disc pl-6">
+                <li>Desarrollo del Frontend</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Precio:</strong> $160 USD
+            </p>
+          </div>
+          <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="flex items-center mb-2">
+              <i class="fas fa-calendar-alt h-6 w-6 text-gray-600 mr-2"></i>
+              <h3 class="text-lg font-semibold">Mes de Octubre</h3>
+            </div>
+            <p>
+              <strong>Actividades:</strong>
+              <ul class="list-disc pl-6">
+                <li>Desarrollo del Backend</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Precio:</strong> $160 USD
+            </p>
+          </div>
+          <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="flex items-center mb-2">
+              <i class="fas fa-calendar-alt h-6 w-6 text-gray-600 mr-2"></i>
+              <h3 class="text-lg font-semibold">Mes de Noviembre</h3>
+            </div>
+            <p>
+              <strong>Actividades:</strong>
+              <ul class="list-disc pl-6">
+                <li>Integración y Pruebas</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Precio:</strong> $160 USD
+            </p>
+          </div>
+          <div class="bg-white shadow-md rounded-lg p-4">
+            <div class="flex items-center mb-2">
+              <i class="fas fa-calendar-alt h-6 w-6 text-gray-600 mr-2"></i>
+              <h3 class="text-lg font-semibold">Mes de Diciembre</h3>
+            </div>
+            <p>
+              <strong>Actividades:</strong>
+              <ul class="list-disc pl-6">
+                <li>Despliegue y Sincronización</li>
+                <li>Entrenamiento y Documentación</li>
+              </ul>
+            </p>
+            <p>
+              <strong>Precio:</strong> $160 USD
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-xl font-semibold mb-2">Tarifa por Hora Adicional</h2>
+        <div class="bg-white shadow-md rounded-lg p-4 mb-4">
+          <p>
+            En caso de modificaciones adicionales, cada hora de programación se
+            facturará a $8 USD.
+          </p>
+        </div>
+
+        <h2 class="text-xl font-semibold mb-2">Presupuesto y Plan de Pago</h2>
+<div class="overflow-x-auto mb-4">
+  <table class="min-w-full bg-white border border-gray-300">
+    <thead>
+      <tr>
+        <th class="px-4 py-2 border-b">Mes</th>
+        <th class="px-4 py-2 border-b">Actividades</th>
+        <th class="px-4 py-2 border-b">Precio (USD)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="px-4 py-2 border-b">Agosto</td>
+        <td class="px-4 py-2 border-b">
+          <ul class="list-disc pl-6">
+            <li>Relevamiento Técnico</li>
+            <li>Diseño del Sistema</li>
+            <li>Configuración de la Base de Datos</li>
+          </ul>
+        </td>
+        <td class="px-4 py-2 border-b">$160</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 border-b">Septiembre</td>
+        <td class="px-4 py-2 border-b">
+          <ul class="list-disc pl-6">
+            <li>Desarrollo del Frontend</li>
+          </ul>
+        </td>
+        <td class="px-4 py-2 border-b">$160</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 border-b">Octubre</td>
+        <td class="px-4 py-2 border-b">
+          <ul class="list-disc pl-6">
+            <li>Desarrollo del Backend</li>
+          </ul>
+        </td>
+        <td class="px-4 py-2 border-b">$160</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 border-b">Noviembre</td>
+        <td class="px-4 py-2 border-b">
+          <ul class="list-disc pl-6">
+            <li>Integración y Pruebas</li>
+          </ul>
+        </td>
+        <td class="px-4 py-2 border-b">$160</td>
+      </tr>
+      <tr>
+        <td class="px-4 py-2 border-b">Diciembre</td>
+        <td class="px-4 py-2 border-b">
+          <ul class="list-disc pl-6">
+            <li>Despliegue y Sincronización</li>
+            <li>Entrenamiento y Documentación</li>
+          </ul>
+        </td>
+        <td class="px-4 py-2">$160</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+        <div class="flex justify-center mb-4">
+          <div class="text-center mx-10">
+            <img src="firma.jpg" alt="Firma 2" class="h-24" />
+            <p>Guido Halley</p>
+            <p class="text-sm">CTO</p>
+            <p class="text-sm">Chief Technology Officer</p>
+          </div>
+        </div>
+        <hr class="my-4 border-gray-300" />
+        <footer class="p-1 text-gray-600 text-center">
+          <p>
+            Para más información sobre nuestros servicios visita
+            <a
+              href="https://twodesigners.online"
+              class="text-blue-400 underline"
+              >twodesigners.online</a
+            >
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
