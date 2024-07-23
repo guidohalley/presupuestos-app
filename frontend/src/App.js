@@ -23,6 +23,7 @@ const App = () => {
           {isLoggedIn ? (
             <Routes>
               <Route path="/*" element={<Dashboard />} />
+              <Route path="/presupuestos" element={<Presupuestos />} />
             </Routes>
           ) : (
             <Routes>

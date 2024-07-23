@@ -1,29 +1,39 @@
+// src/components/Header.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function Header({ isLoggedIn, onLogout }) {
+function Header({ isLoggedIn, handleLogout }) {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
-    <header className="bg-white p-4 shadow-md w-full flex justify-between items-center">
-      <div className="flex items-center">
-        <img src={require('../assets/TDLOGO.png')} alt="twodesigners" className="h-8 mr-3" />
+    <nav className="bg-white p-4 shadow-md w-full">
+      <div className="flex justify-between items-center">
+        <div onClick={handleLogoClick} className="cursor-pointer">
+          <img src={require('../assets/TDLOGO.png')} alt="Logo" className="h-10" />
+        </div>
+        <div>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className="text-red-600 hover:text-red-800">
+              Cerrar Sesión
+            </button>
+          ) : (
+            <>
+              <Link to="/login" className="mr-4 text-black hover:text-gray-800">
+                Iniciar Sesión
+              </Link>
+              <Link to="/register" className="text-black hover:text-gray-800">
+                Registrarse
+              </Link>
+            </>
+          )}
+        </div>
       </div>
-      <div>
-        {isLoggedIn ? (
-          <button onClick={onLogout} className="text-gray-900 hover:text-gray-700">
-            Cerrar Sesión
-          </button>
-        ) : (
-          <>
-            <Link to="/login" className="mr-4 text-gray-900 hover:text-gray-700">
-              Iniciar Sesión
-            </Link>
-            <Link to="/register" className="text-gray-900 hover:text-gray-700">
-              Registrarse
-            </Link>
-          </>
-        )}
-      </div>
-    </header>
+    </nav>
   );
 }
 

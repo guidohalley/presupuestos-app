@@ -20,11 +20,6 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-indigo-600 text-white py-4">
-        <div className="container mx-auto px-4">
-        <img src={require('../assets/TDLOGO.png')} alt="twodesigners" className="h-8 mr-3" />
-        </div>
-      </header>
       <div className="flex flex-1">
         <aside className="bg-gray-800 text-white w-64 p-4">
           <nav>

@@ -41,10 +41,7 @@ export const login = async (req, res) => {
       return res.status(400).json({ error: "Invalid username or password" });
     }
 
-    const isPasswordValid = await bcrypt.compare(
-      password,
-      usuario.password_hash
-    );
+    const isPasswordValid = await bcrypt.compare(password, usuario.password_hash);
 
     if (!isPasswordValid) {
       return res.status(400).json({ error: "Invalid username or password" });

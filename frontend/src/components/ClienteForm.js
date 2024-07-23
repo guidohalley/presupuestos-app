@@ -63,7 +63,7 @@ const ClienteForm = ({ onClienteAdded }) => {
       </div>
       <button
         type="submit"
-        className="w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors"
+        className="w-full bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors"
       >
         Crear Cliente
       </button>

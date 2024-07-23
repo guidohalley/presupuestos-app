@@ -1,8 +1,7 @@
-// src/components/LoginForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const LoginForm = ({ onLogin }) => {
+function LoginForm({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -10,8 +9,11 @@ const LoginForm = ({ onLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3010/api/login', { username, password });
-      localStorage.setItem('token', response.data.token); // Almacena el token
+      const response = await axios.post('http://localhost:3010/api/usuarios/login', {
+        username,
+        password,
+      });
+      localStorage.setItem('token', response.data.token);
       onLogin();
     } catch (error) {
       setError('Error logging in');
@@ -29,7 +31,7 @@ const LoginForm = ({ onLogin }) => {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+            className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-gray-100 focus:border-gray-300"
           />
         </div>
         <div className="mb-4">
@@ -38,18 +40,18 @@ const LoginForm = ({ onLogin }) => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+            className="w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-gray-100 focus:border-gray-300"
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors"
+          className="w-full bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors"
         >
           Login
         </button>
       </form>
     </div>
   );
-};
+}
 
 export default LoginForm;
