@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const { sequelize } = require('../config/database');
 
 const Cliente = sequelize.define('Cliente', {
   nombre: {
@@ -8,8 +8,8 @@ const Cliente = sequelize.define('Cliente', {
   },
   email: {
     type: DataTypes.STRING,
-    unique: true,
     allowNull: false,
+    unique: true,
   },
   telefono: {
     type: DataTypes.STRING,
@@ -17,17 +17,8 @@ const Cliente = sequelize.define('Cliente', {
   direccion: {
     type: DataTypes.STRING,
   },
-  created_at: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  },
-  updated_at: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  },
 }, {
-  tableName: 'Clientes',
-  timestamps: false,
+  timestamps: true,
 });
 
 module.exports = Cliente;

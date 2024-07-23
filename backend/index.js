@@ -1,34 +1,20 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const sequelize = require('./config/database');
-const routes = require('./routes');
-
-// Configurar variables de entorno
 require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
+const { sequelize } = require('./config/database');
 
 const app = express();
 
-// Middleware
-app.use(bodyParser.json());
 app.use(cors());
-
-// Rutas
+app.use(bodyParser.json());
 app.use('/api', routes);
 
-// Ruta de prueba
-app.get('/', (req, res) => {
-  res.send('API is running...');
-});
-
-// Sincronizar base de datos y arrancar servidor
 sequelize.sync().then(() => {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  app.listen(3000, () => {
+    console.log('Server is running on port 3000');
   });
 }).catch(err => {
   console.error('Unable to connect to the database:', err);
 });
-
-module.exports = app;
