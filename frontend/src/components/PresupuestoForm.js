@@ -15,16 +15,16 @@ const PresupuestoForm = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const clientesResponse = await axios.get('http://localhost:3000/api/clientes');
+      const clientesResponse = await axios.get('http://localhost:3010/api/clientes');
       setClientes(clientesResponse.data);
 
-      const productosResponse = await axios.get('http://localhost:3000/api/productos');
+      const productosResponse = await axios.get('http://localhost:3010/api/productos');
       setProductos(productosResponse.data);
 
-      const monedasResponse = await axios.get('http://localhost:3000/api/monedas');
+      const monedasResponse = await axios.get('http://localhost:3010/api/monedas');
       setMonedas(monedasResponse.data);
 
-      const cotizacionesResponse = await axios.get('http://localhost:3000/api/cotizaciones');
+      const cotizacionesResponse = await axios.get('http://localhost:3010/api/cotizaciones');
       setCotizaciones(cotizacionesResponse.data);
     };
 
@@ -61,7 +61,7 @@ const PresupuestoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/presupuestos', {
+      const response = await axios.post('http://localhost:3010/api/presupuestos', {
         cliente_id: clienteId,
         moneda_id: monedaId,
         cotizacion_id: cotizacionId,

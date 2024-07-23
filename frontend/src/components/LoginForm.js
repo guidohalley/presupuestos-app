@@ -1,24 +1,20 @@
+// src/components/LoginForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/usuarios/login', { username, password });
-      const { token } = response.data;
-      localStorage.setItem('token', token);
+      const response = await axios.post('http://localhost:3010/api/login', { username, password });
+      localStorage.setItem('token', response.data.token); // Almacena el token
       onLogin();
-      navigate('/clientes'); // Redirigir a la página de clientes
     } catch (error) {
-      console.error('Error logging in:', error);
-      setError('Invalid username or password');
+      setError('Error logging in');
     }
   };
 

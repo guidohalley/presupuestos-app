@@ -11,7 +11,7 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/usuarios/register', { username, email, password });
+      await axios.post('http://localhost:3010/api/usuarios/register', { username, email, password });
       setSuccess('User registered successfully');
       setError('');
     } catch (error) {

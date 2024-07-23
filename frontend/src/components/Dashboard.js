@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   const fetchClientes = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/clientes');
+      const response = await axios.get('http://localhost:3010/api/clientes');
       setClientes(response.data);
     } catch (error) {
       console.error('Error fetching clients:', error);
@@ -22,7 +22,7 @@ const Dashboard = () => {
     <div className="min-h-screen flex flex-col">
       <header className="bg-indigo-600 text-white py-4">
         <div className="container mx-auto px-4">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
+        <img src={require('../assets/TDLOGO.png')} alt="twodesigners" className="h-8 mr-3" />
         </div>
       </header>
       <div className="flex flex-1">
