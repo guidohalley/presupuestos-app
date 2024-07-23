@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { createCliente } from '../services/api';
 
 const ClienteForm = ({ onClienteAdded }) => {
   const [nombre, setNombre] = useState('');
@@ -9,16 +9,17 @@ const ClienteForm = ({ onClienteAdded }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newCliente = { nombre, email, telefono, direccion };
     try {
-      await axios.post('http://localhost:3000/api/clientes', newCliente);
-      setNombre('');
-      setEmail('');
-      setTelefono('');
-      setDireccion('');
-      onClienteAdded(); // Llamar al callback para actualizar la lista de clientes
+      const response = await createCliente({
+        nombre,
+        email,
+        telefono,
+        direccion,
+      });
+      console.log('Cliente creado:', response.data);
+      onClienteAdded(response.data);
     } catch (error) {
-      console.error('Error creating client:', error);
+      console.error('Error creando cliente:', error);
     }
   };
 

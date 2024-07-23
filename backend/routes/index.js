@@ -1,11 +1,11 @@
-const express = require('express');
-const clienteRoutes = require('./clienteRoutes');
-const contratoRoutes = require('./contratoRoutes');
-const cotizacionRoutes = require('./cotizacionRoutes');
-const facturaRoutes = require('./facturaRoutes');
-const presupuestoRoutes = require('./presupuestoRoutes');
-const productoRoutes = require('./productoRoutes');
-const usuarioRoutes = require('./usuarioRoutes');
+import express from 'express';
+import clienteRoutes from './clienteRoutes.js';
+import contratoRoutes from './contratoRoutes.js';
+import cotizacionRoutes from './cotizacionRoutes.js';
+import facturaRoutes from './facturaRoutes.js';
+import presupuestoRoutes from './presupuestoRoutes.js';
+import productoRoutes from './productoRoutes.js';
+import usuarioRoutes from './usuarioRoutes.js';
 
 const router = express.Router();
 
@@ -17,4 +17,4 @@ router.use('/presupuestos', presupuestoRoutes);
 router.use('/productos', productoRoutes);
 router.use('/usuarios', usuarioRoutes);
 
-module.exports = router;
+export default router;

@@ -1,6 +1,6 @@
-const Cliente = require('../models/Cliente');
+import Cliente from '../models/Cliente.js';
 
-exports.getClientes = async (req, res) => {
+export const getClientes = async (req, res) => {
   try {
     const clientes = await Cliente.findAll();
     res.json(clientes);
@@ -9,10 +9,15 @@ exports.getClientes = async (req, res) => {
   }
 };
 
-exports.createCliente = async (req, res) => {
+export const createCliente = async (req, res) => {
   try {
     const { nombre, email, telefono, direccion } = req.body;
-    const newCliente = await Cliente.create({ nombre, email, telefono, direccion });
+    const newCliente = await Cliente.create({
+      nombre,
+      email,
+      telefono,
+      direccion,
+    });
     res.status(201).json(newCliente);
   } catch (error) {
     res.status(500).json({ error: 'Error creating client' });
