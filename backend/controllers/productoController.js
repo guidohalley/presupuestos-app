@@ -1,6 +1,6 @@
-const Producto = require("../models/Producto");
+import Producto from '../models/Producto.js';
 
-exports.getAllProductos = async (req, res) => {
+export const getAllProductos = async (req, res) => {
   try {
     const productos = await Producto.findAll();
     res.json(productos);
@@ -9,7 +9,7 @@ exports.getAllProductos = async (req, res) => {
   }
 };
 
-exports.createProducto = async (req, res) => {
+export const createProducto = async (req, res) => {
   try {
     const producto = await Producto.create(req.body);
     res.json(producto);
@@ -18,7 +18,7 @@ exports.createProducto = async (req, res) => {
   }
 };
 
-exports.getProductoById = async (req, res) => {
+export const getProductoById = async (req, res) => {
   try {
     const producto = await Producto.findByPk(req.params.id);
     if (!producto) {
@@ -30,7 +30,7 @@ exports.getProductoById = async (req, res) => {
   }
 };
 
-exports.updateProducto = async (req, res) => {
+export const updateProducto = async (req, res) => {
   try {
     const producto = await Producto.findByPk(req.params.id);
     if (!producto) {
@@ -43,7 +43,7 @@ exports.updateProducto = async (req, res) => {
   }
 };
 
-exports.deleteProducto = async (req, res) => {
+export const deleteProducto = async (req, res) => {
   try {
     const producto = await Producto.findByPk(req.params.id);
     if (!producto) {

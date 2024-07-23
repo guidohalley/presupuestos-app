@@ -1,9 +1,9 @@
-const Contrato = require("../models/Contrato");
-const Presupuesto = require("../models/Presupuesto");
-const Cliente = require("../models/Cliente");
-const Moneda = require("../models/Moneda");
+import Contrato from '../models/Contrato.js';
+import Presupuesto from '../models/Presupuesto.js';
+import Cliente from '../models/Cliente.js';
+import Moneda from '../models/Moneda.js';
 
-exports.getAllContratos = async (req, res) => {
+export const getAllContratos = async (req, res) => {
   try {
     const contratos = await Contrato.findAll({
       include: [{ model: Presupuesto }, { model: Cliente }, { model: Moneda }],
@@ -14,7 +14,7 @@ exports.getAllContratos = async (req, res) => {
   }
 };
 
-exports.createContrato = async (req, res) => {
+export const createContrato = async (req, res) => {
   try {
     const contrato = await Contrato.create(req.body);
     res.json(contrato);
@@ -23,7 +23,7 @@ exports.createContrato = async (req, res) => {
   }
 };
 
-exports.getContratoById = async (req, res) => {
+export const getContratoById = async (req, res) => {
   try {
     const contrato = await Contrato.findByPk(req.params.id, {
       include: [{ model: Presupuesto }, { model: Cliente }, { model: Moneda }],
@@ -37,7 +37,7 @@ exports.getContratoById = async (req, res) => {
   }
 };
 
-exports.updateContrato = async (req, res) => {
+export const updateContrato = async (req, res) => {
   try {
     const contrato = await Contrato.findByPk(req.params.id);
     if (!contrato) {
@@ -50,7 +50,7 @@ exports.updateContrato = async (req, res) => {
   }
 };
 
-exports.deleteContrato = async (req, res) => {
+export const deleteContrato = async (req, res) => {
   try {
     const contrato = await Contrato.findByPk(req.params.id);
     if (!contrato) {

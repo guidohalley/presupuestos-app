@@ -1,10 +1,10 @@
-const Cotizacion = require("../models/Cotizacion");
-const CotizacionItem = require("../models/CotizacionItem");
-const Cliente = require("../models/Cliente");
-const Producto = require("../models/Producto");
-const Moneda = require("../models/Moneda");
+import Cotizacion from '../models/Cotizacion.js';
+import CotizacionItem from '../models/CotizacionItem.js';
+import Cliente from '../models/Cliente.js';
+import Producto from '../models/Producto.js';
+import Moneda from '../models/Moneda.js';
 
-exports.getAllCotizaciones = async (req, res) => {
+export const getAllCotizaciones = async (req, res) => {
   try {
     const cotizaciones = await Cotizacion.findAll({
       include: [
@@ -22,7 +22,7 @@ exports.getAllCotizaciones = async (req, res) => {
   }
 };
 
-exports.createCotizacion = async (req, res) => {
+export const createCotizacion = async (req, res) => {
   try {
     const cotizacion = await Cotizacion.create(req.body, {
       include: [CotizacionItem],
@@ -33,7 +33,7 @@ exports.createCotizacion = async (req, res) => {
   }
 };
 
-exports.getCotizacionById = async (req, res) => {
+export const getCotizacionById = async (req, res) => {
   try {
     const cotizacion = await Cotizacion.findByPk(req.params.id, {
       include: [
@@ -54,7 +54,7 @@ exports.getCotizacionById = async (req, res) => {
   }
 };
 
-exports.updateCotizacion = async (req, res) => {
+export const updateCotizacion = async (req, res) => {
   try {
     const cotizacion = await Cotizacion.findByPk(req.params.id);
     if (!cotizacion) {
@@ -67,7 +67,7 @@ exports.updateCotizacion = async (req, res) => {
   }
 };
 
-exports.deleteCotizacion = async (req, res) => {
+export const deleteCotizacion = async (req, res) => {
   try {
     const cotizacion = await Cotizacion.findByPk(req.params.id);
     if (!cotizacion) {

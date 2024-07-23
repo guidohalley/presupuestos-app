@@ -1,6 +1,6 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/database');
-const Contrato = require('./Contrato');
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/database.js';
+import Contrato from './Contrato.js';
 
 const Factura = sequelize.define('Factura', {
   contrato_id: {
@@ -52,4 +52,4 @@ const Factura = sequelize.define('Factura', {
 
 Factura.belongsTo(Contrato, { foreignKey: 'contrato_id' });
 
-module.exports = Factura;
+export default Factura;

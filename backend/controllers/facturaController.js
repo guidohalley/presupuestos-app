@@ -1,10 +1,10 @@
-const Factura = require("../models/Factura");
-const FacturaItem = require("../models/FacturaItem");
-const Contrato = require("../models/Contrato");
-const Cliente = require("../models/Cliente");
-const Producto = require("../models/Producto");
+import Factura from '../models/Factura.js';
+import FacturaItem from '../models/FacturaItem.js';
+import Contrato from '../models/Contrato.js';
+import Cliente from '../models/Cliente.js';
+import Producto from '../models/Producto.js';
 
-exports.getAllFacturas = async (req, res) => {
+export const getAllFacturas = async (req, res) => {
   try {
     const facturas = await Factura.findAll({
       include: [
@@ -21,7 +21,7 @@ exports.getAllFacturas = async (req, res) => {
   }
 };
 
-exports.createFactura = async (req, res) => {
+export const createFactura = async (req, res) => {
   try {
     const factura = await Factura.create(req.body, {
       include: [FacturaItem],
@@ -32,7 +32,7 @@ exports.createFactura = async (req, res) => {
   }
 };
 
-exports.getFacturaById = async (req, res) => {
+export const getFacturaById = async (req, res) => {
   try {
     const factura = await Factura.findByPk(req.params.id, {
       include: [
@@ -52,7 +52,7 @@ exports.getFacturaById = async (req, res) => {
   }
 };
 
-exports.updateFactura = async (req, res) => {
+export const updateFactura = async (req, res) => {
   try {
     const factura = await Factura.findByPk(req.params.id);
     if (!factura) {
@@ -65,7 +65,7 @@ exports.updateFactura = async (req, res) => {
   }
 };
 
-exports.deleteFactura = async (req, res) => {
+export const deleteFactura = async (req, res) => {
   try {
     const factura = await Factura.findByPk(req.params.id);
     if (!factura) {

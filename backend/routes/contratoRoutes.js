@@ -1,13 +1,13 @@
-const express = require('express');
+import express from 'express';
+import { getAllContratos, createContrato, getContratoById, updateContrato, deleteContrato } from '../controllers/contratoController.js';
+
 const router = express.Router();
-const contratoController = require('../controllers/contratoController');
 
 // Rutas para manejar los contratos
-router.get('/', contratoController.getAllContratos);
-router.post('/', contratoController.createContrato);
-router.get('/:id', contratoController.getContratoById);
-router.put('/:id', contratoController.updateContrato);
-router.delete('/:id', contratoController.deleteContrato);
+router.get('/', getAllContratos);
+router.post('/', createContrato);
+router.get('/:id', getContratoById);
+router.put('/:id', updateContrato);
+router.delete('/:id', deleteContrato);
 
-module.exports = router;
-
+export default router;

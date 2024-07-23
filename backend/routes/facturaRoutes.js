@@ -1,12 +1,13 @@
-const express = require('express');
+import express from 'express';
+import { getAllFacturas, createFactura, getFacturaById, updateFactura, deleteFactura } from '../controllers/facturaController.js';
+
 const router = express.Router();
-const facturaController = require('../controllers/facturaController');
 
 // Rutas para manejar las facturas
-router.get('/', facturaController.getAllFacturas);
-router.post('/', facturaController.createFactura);
-router.get('/:id', facturaController.getFacturaById);
-router.put('/:id', facturaController.updateFactura);
-router.delete('/:id', facturaController.deleteFactura);
+router.get('/', getAllFacturas);
+router.post('/', createFactura);
+router.get('/:id', getFacturaById);
+router.put('/:id', updateFactura);
+router.delete('/:id', deleteFactura);
 
-module.exports = router;
+export default router;

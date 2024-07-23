@@ -1,21 +1,19 @@
-const Presupuesto = require("../models/Presupuesto");
-const PresupuestoItem = require("../models/PresupuestoItem");
-const Cliente = require("../models/Cliente");
-const Producto = require("../models/Producto");
-const Moneda = require("../models/Moneda");
-const Cotizacion = require("../models/Cotizacion");
+import Presupuesto from '../models/Presupuesto.js';
+import PresupuestoItem from '../models/PresupuestoItem.js';
+import Cliente from '../models/Cliente.js';
+import Moneda from '../models/Moneda.js';
+import Cotizacion from '../models/Cotizacion.js';
 
-exports.getAllPresupuestos = async (req, res) => {
+export const getAllPresupuestos = async (req, res) => {
   try {
     const presupuestos = await Presupuesto.findAll({
       include: [
         { model: Cliente },
         { model: Moneda },
+        { model: Cotizacion },
         {
           model: PresupuestoItem,
-          include: [{ model: Producto }],
         },
-        { model: Cotizacion },
       ],
     });
     res.json(presupuestos);
@@ -24,7 +22,7 @@ exports.getAllPresupuestos = async (req, res) => {
   }
 };
 
-exports.createPresupuesto = async (req, res) => {
+export const createPresupuesto = async (req, res) => {
   try {
     const presupuesto = await Presupuesto.create(req.body, {
       include: [PresupuestoItem],
@@ -35,17 +33,16 @@ exports.createPresupuesto = async (req, res) => {
   }
 };
 
-exports.getPresupuestoById = async (req, res) => {
+export const getPresupuestoById = async (req, res) => {
   try {
     const presupuesto = await Presupuesto.findByPk(req.params.id, {
       include: [
         { model: Cliente },
         { model: Moneda },
+        { model: Cotizacion },
         {
           model: PresupuestoItem,
-          include: [{ model: Producto }],
         },
-        { model: Cotizacion },
       ],
     });
     if (!presupuesto) {
@@ -57,7 +54,7 @@ exports.getPresupuestoById = async (req, res) => {
   }
 };
 
-exports.updatePresupuesto = async (req, res) => {
+export const updatePresupuesto = async (req, res) => {
   try {
     const presupuesto = await Presupuesto.findByPk(req.params.id);
     if (!presupuesto) {
@@ -70,7 +67,7 @@ exports.updatePresupuesto = async (req, res) => {
   }
 };
 
-exports.deletePresupuesto = async (req, res) => {
+export const deletePresupuesto = async (req, res) => {
   try {
     const presupuesto = await Presupuesto.findByPk(req.params.id);
     if (!presupuesto) {

@@ -1,12 +1,13 @@
-const express = require('express');
+import express from 'express';
+import { getAllCotizaciones, createCotizacion, getCotizacionById, updateCotizacion, deleteCotizacion } from '../controllers/cotizacionController.js';
+
 const router = express.Router();
-const cotizacionController = require('../controllers/cotizacionController');
 
 // Rutas para manejar las cotizaciones
-router.get('/', cotizacionController.getAllCotizaciones);
-router.post('/', cotizacionController.createCotizacion);
-router.get('/:id', cotizacionController.getCotizacionById);
-router.put('/:id', cotizacionController.updateCotizacion);
-router.delete('/:id', cotizacionController.deleteCotizacion);
+router.get('/', getAllCotizaciones);
+router.post('/', createCotizacion);
+router.get('/:id', getCotizacionById);
+router.put('/:id', updateCotizacion);
+router.delete('/:id', deleteCotizacion);
 
-module.exports = router;
+export default router;

@@ -1,12 +1,12 @@
-const express = require('express');
+import express from 'express';
+import { getAllPresupuestos, createPresupuesto, getPresupuestoById, updatePresupuesto, deletePresupuesto } from '../controllers/presupuestoController.js';
+
 const router = express.Router();
-const presupuestoController = require('../controllers/presupuestoController');
 
-// Rutas para manejar los presupuestos
-router.get('/', presupuestoController.getAllPresupuestos);
-router.post('/', presupuestoController.createPresupuesto);
-router.get('/:id', presupuestoController.getPresupuestoById);
-router.put('/:id', presupuestoController.updatePresupuesto);
-router.delete('/:id', presupuestoController.deletePresupuesto);
+router.get('/', getAllPresupuestos);
+router.post('/', createPresupuesto);
+router.get('/:id', getPresupuestoById);
+router.put('/:id', updatePresupuesto);
+router.delete('/:id', deletePresupuesto);
 
-module.exports = router;
+export default router;

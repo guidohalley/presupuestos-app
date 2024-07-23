@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 sequelize.sync().then(() => {
-  app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+  app.listen(3010, () => {
+    console.log('Server is running on port 3010');
   });
 }).catch(err => {
   console.error('Unable to connect to the database:', err);

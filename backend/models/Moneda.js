@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/database');
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/database.js';
 
 const Moneda = sequelize.define('Moneda', {
   nombre: {
@@ -31,4 +31,4 @@ const Moneda = sequelize.define('Moneda', {
   underscored: true
 });
 
-module.exports = Moneda;
+export default Moneda;

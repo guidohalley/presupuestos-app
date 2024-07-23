@@ -1,8 +1,8 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../config/database');
-const Presupuesto = require('./Presupuesto');
-const Cliente = require('./Cliente');
-const Moneda = require('./Moneda');
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../config/database.js';
+import Presupuesto from './Presupuesto.js';
+import Cliente from './Cliente.js';
+import Moneda from './Moneda.js';
 
 const Contrato = sequelize.define('Contrato', {
   presupuesto_id: {
@@ -69,4 +69,4 @@ Contrato.belongsTo(Presupuesto, { foreignKey: 'presupuesto_id' });
 Contrato.belongsTo(Cliente, { foreignKey: 'cliente_id' });
 Contrato.belongsTo(Moneda, { foreignKey: 'moneda_id' });
 
-module.exports = Contrato;
+export default Contrato;

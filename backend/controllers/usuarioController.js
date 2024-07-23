@@ -1,8 +1,8 @@
-const Usuario = require("../models/Usuario");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import Usuario from '../models/Usuario.js';
 
-exports.register = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { username, password, email } = req.body;
 
@@ -31,7 +31,7 @@ exports.register = async (req, res) => {
   }
 };
 
-exports.login = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -61,7 +61,7 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.getAllUsuarios = async (req, res) => {
+export const getAllUsuarios = async (req, res) => {
   try {
     const usuarios = await Usuario.findAll();
     res.json(usuarios);
@@ -70,7 +70,7 @@ exports.getAllUsuarios = async (req, res) => {
   }
 };
 
-exports.getUsuarioById = async (req, res) => {
+export const getUsuarioById = async (req, res) => {
   try {
     const usuario = await Usuario.findByPk(req.params.id);
     if (!usuario) {
@@ -82,7 +82,7 @@ exports.getUsuarioById = async (req, res) => {
   }
 };
 
-exports.updateUsuario = async (req, res) => {
+export const updateUsuario = async (req, res) => {
   try {
     const usuario = await Usuario.findByPk(req.params.id);
     if (!usuario) {
@@ -95,7 +95,7 @@ exports.updateUsuario = async (req, res) => {
   }
 };
 
-exports.deleteUsuario = async (req, res) => {
+export const deleteUsuario = async (req, res) => {
   try {
     const usuario = await Usuario.findByPk(req.params.id);
     if (!usuario) {
