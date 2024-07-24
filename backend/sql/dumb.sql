@@ -157,3 +157,11 @@ CREATE TABLE Facturas_Items (
 -- Índices para búsqueda rápida por factura_id y producto_id
 CREATE INDEX idx_facturas_items_factura_id ON Facturas_Items(factura_id);
 CREATE INDEX idx_facturas_items_producto_id ON Facturas_Items(producto_id);
+-- Cambiar nombre de tablas
+ALTER TABLE public."Facturas" RENAME TO "Comprobantes";
+
+-- Cambiar nombre de tablas
+ALTER TABLE public."Facturas_Items" RENAME TO "Comprobantes_Items";
+
+
+
